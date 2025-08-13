@@ -1,0 +1,17 @@
+schema_version: "1.0"
+
+json_terms: ["{","}","[","]",'"',"json","schema"]
+code_terms: ["```","def ","class ","SELECT ","INSERT ","function(","#include","public static void","console.log","import "]
+multistep:  ["first","second","then","next","finally","step","task","subtask"]
+urgency:    ["asap","urgent","quick","now","immediately","fast"]
+safety:     ["password","api key","credit card","ssn","confidential","private"]
+
+latency:
+  medium: ["summarize","translate","classify"]
+
+tiktoken_encoding: "cl100k_base"
+complexity:
+  length_thresholds: [120, 500]
+  branching_markers: ["if","unless","although"]
+  uniq_ratio_penalty_lt: 0.45
+  multistep_scale: 0.3333

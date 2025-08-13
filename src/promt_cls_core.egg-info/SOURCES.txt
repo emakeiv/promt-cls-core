@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/prompt_cls_core/__init__.py
+src/prompt_cls_core/data/__init__.py
+src/prompt_cls_core/data/main.py
+src/prompt_cls_core/model/__init__.py
+src/prompt_cls_core/ops/__init__.py
+src/prompt_cls_core/ops/etl/main.py
+src/prompt_cls_core/ops/etl/schema.py
+src/promt_cls_core.egg-info/PKG-INFO
+src/promt_cls_core.egg-info/SOURCES.txt
+src/promt_cls_core.egg-info/dependency_links.txt
+src/promt_cls_core.egg-info/requires.txt
+src/promt_cls_core.egg-info/top_level.txt

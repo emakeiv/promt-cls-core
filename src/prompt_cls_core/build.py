@@ -1,0 +1,5 @@
+
+
+import yaml
+
+cfg = CorpusCfg()

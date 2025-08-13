@@ -1,0 +1,18 @@
+
+sources:
+  - name: gsm8k
+    subset: main
+    split: train
+    text_fields: ["question"]
+    label: math
+
+  - name: spider
+    split: train
+    text_fields: ["question"]
+    label: sql
+
+  - name: squad
+    split: train
+    text_fields: ["question"]
+
+path: "./dataset/router_corpus.parquet"

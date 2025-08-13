@@ -1622,7 +1622,7 @@ wheels = [
 [[package]]
 name = "promt-cls-core"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "datasets" },
     { name = "mlflow-skinny", version = "3.1.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
