@@ -4,6 +4,8 @@ import pandas as pd
 from typing import List
 from dataclasses import dataclass
 from datasets import load_dataset
+from src.prompt_cls_core.data.schema import CorpusCfg
+
 
 @dataclass
 class DataEntrySample:
@@ -20,14 +22,14 @@ def _flatten(d: dict, keys: List[str]) ->str | None:
 
 class DataGenerator:
 
-    def build_corpus(cfg: CorpusCfg, limit: int = 5000) -> pd.DataFrame:
+    def build_corpus(self, cfg: CorpusCfg, limit: int = 5000) -> pd.DataFrame:
         rows: List[DataEntrySample] = []
         for src in cfg.sources:
             ds = load_dataset(src.name, src.subset) if src.subset else load_dataset(src.name)
             table = ds[src.split].select(range(limit))
-            for i, row in table:
-                text = _flatten(r, src.text_fields) if src.text_fields else None
-                rows.append(RouterSample(text=text, label=src.label))
+            for row in table:
+                text = _flatten(row, src.text_fields) if src.text_fields else None
+                rows.append(DataEntrySample(text=text, label=src.label))
         
         df = pd.DataFrame(rows).dropna()
         df = df[df["text"].str.len() > 0].reset_index(drop=True)

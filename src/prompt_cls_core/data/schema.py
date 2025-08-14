@@ -1,13 +1,13 @@
 
 from pydantic import BaseModel, Field
-from typing import List, Optional
+from typing import List, Optional, Literal
 
 class SourceCfg(BaseModel):
     name: str  
     subset: Optional[str] = None
     split: str = "train"
     text_fields: List[str] = Field(default_factory=list)
-    label: Label
+    label: str
     template: Optional[str] = None
 
 class CorpusCfg(BaseModel):

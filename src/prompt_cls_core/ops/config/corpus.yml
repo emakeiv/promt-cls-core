@@ -14,5 +14,6 @@ sources:
   - name: squad
     split: train
     text_fields: ["question"]
+    label: qa
 
 path: "./dataset/router_corpus.parquet"
